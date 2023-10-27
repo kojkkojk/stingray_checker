@@ -5,7 +5,7 @@ function Home() {
    const [charNames, setCharNames] = useState("");
    const typingTXT = (e) => { setCharNames(e.target.value); }
    const navigate = useNavigate();
-   const shootName = () => { navigate(`/charlist?charname=${charNames}`) }
+   const shootName = () => { navigate(`/charlist?charname=${encodeURIComponent(charNames)}`) }
    const check = () => {
       if (charNames.length === 0) {
          alert("캐릭터 명을 입력하세요!")

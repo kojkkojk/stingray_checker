@@ -1,63 +1,168 @@
 @font-face {
-   font-family: 'DNFBitBitv2';
-   font-style: normal;
-   font-weight: 400;
-   src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
- }
- 
- @font-face {
-   font-family: 'DNFForgedBlade';
-   font-style: normal;
-   font-weight: 300;
-   src: url('//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf')format('opentype')
- }
- 
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
- 
- .App {
-   width: 100%;
-   height: 100vh;
- }
- 
- .navbar {
-   font-family: 'DNFBitBitv2';
-   height: 70px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   background-color: #3375cc;
-   padding: 10px 20px;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
- }
- 
- .logo {
-   font-size: 1.2em;
-   color: #fff;
- }
- 
- .menu {
-   display: flex;
-   list-style: none;
-   height: 100%;
-   width: 100px;
-   gap: 5px;
- }
- 
- .menu li {
-   text-align: center;
-   height: 100%;
-   padding-top: 11px;
-   width: 50%;
- }
- 
- .menu a {
-   text-decoration: none;
-   color: #fff;
-   font-size: 19pt;
-   font-weight: bold;
-   display: inline-block;
- }
+  font-family: 'DNFBitBitv2';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf')format('opentype')
+}
+
+@font-face {
+  font-family: 'DNFForgedBlade';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//cdn.df.nexon.com/img/common/font/DNFForgedBlade-Light.otf')format('opentype')
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar {
+  font-family: 'DNFBitBitv2';
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3375cc;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  font-size: 1.2em;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  width: 100px;
+  gap: 5px;
+}
+
+.menu li {
+  text-align: center;
+  height: 100%;
+  padding-top: 11px;
+  width: 50%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 19pt;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.sideMenu {
+  font-family: 'DNFBitBitv2';
+  position: absolute;
+  top: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: rgba(135, 207, 235, 0.95);
+  transition: 0.35s;
+  padding: 40px;
+}
+
+.sideMenu div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sideMenu div ul {
+  list-style: none;
+  width: 100%;
+  height: 65%;
+  border: 1px solid red;
+  padding: 7px;
+}
+
+.sideMenu div ul li {
+  border: 1px solid red;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  margin-bottom: 7px;
+}
+
+.footers {
+  width: 100%;
+  height: calc(15% - 40px);
+  background-color: #3375cc;
+  color: #fff;
+}
+
+.footers div {
+  width: 100%;
+  height: 100%;
+  font-family: 'DNFBitBitv2';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  letter-spacing: 2px;
+}
+
+.footers div a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opppss {
+  width: 240px;
+  height: 460px;
+}
+.opppss div:nth-child(1){
+  display: flex;
+}
+.opppss div:nth-child(1) p{
+  width: 90%;
+  text-align: center;
+  font-family: 'DNFBitBitv2';
+}
+.opppss .closeBtn {
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #3375cc;
+}
+.modal_item{
+  padding-top: 5px;
+}
+.theadModal {
+  font-family: 'DNFForgedBlade';
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.theadModal span,
+.tbodyModal .trModal span {
+  font-family: 'DNFForgedBlade';
+  display: inline-block;
+  text-align: center;
+  font-size: small;
+  overflow: hidden;
+  height: 100%;
+}
+
+.theadModal span,
+.tbodyModal .trModal span {
+  width: 50%;
+  border-right: 1px solid rgba(209, 209, 209, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}

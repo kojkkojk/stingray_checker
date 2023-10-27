@@ -2,17 +2,30 @@ const express = require("express");
 const app = express();
 const http = require('http').createServer(app);
 const axios = require('axios');
+const cors = require("cors")
 const port = 5000;
 const basic_infos = require("./configs/basic_configs");
 const apiKey = basic_infos.apiKey;
 const BASE_URL = basic_infos.BASE_URL;
+const bodyParser = require('body-parser');
 
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
+app.set('views', __dirname + '/views');
+app.use(cors({
+   origin: function(origin, callback) {
+     if (!origin || allowedOrigins.includes(origin)) {
+       callback(null, true);
+     } else {
+       callback(new Error('Not allowed by CORS'));
+     }
+   }
+ }));
 
 app.get('/api/charlist', async (req, res) => {
-   let charNames = req.query.charname;
-   let enCode = encodeURI(charNames);
+   let receivedData2 = req.query;
+   let enCode = encodeURI(receivedData2.charname);
    try {
       const response = await axios.get(`${BASE_URL}/servers/all/characters?characterName=${enCode}&limit=100&wordType=match&apikey=${apiKey}`);
       const data = response.data;

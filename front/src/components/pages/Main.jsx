@@ -1,11 +1,21 @@
 import React from 'react'
 import axios from 'axios';
-import { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { navi_chaeck, critical, spChars, not100Chars } from '../../configs/etc'
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { navi_chaeck, critical, spChars } from '../../configs/etc'
+import { AiOutlineQuestionCircle } from 'react-icons/ai'
+import Modals from '../designs/Modals';
 
 function Main() {
    const [searchParams] = useSearchParams();
+   const [modalIsOpen, setIsOpen] = useState(false);
+   function openModal() {
+     setIsOpen(true);
+   }
+   function afterOpenModal() {} 
+   function closeModal() {
+     setIsOpen(false);
+   }
    const [userDatas, setUserDatas] = useState({
       critical: [
          { name: '물리 크리티컬', value: 0 },
@@ -23,16 +33,10 @@ function Main() {
    const charUID = searchParams.get("charuid");
    const serverID = searchParams.get("serverId");
    const foundObj = spChars.find(i => i["직업"] === userDatas.jobGrowName);
-   const not100CharFind = not100Chars.find(i => i["직업"] === userDatas.jobGrowName);
    const chMax = (userBuff, maxBuff) => {
       let isMax = ""
       if (userBuff === maxBuff) { isMax = "Max"; return isMax }
-      else { isMax = "No Max"; return isMax }
-   }
-   const chMax2 = (userCritical, maxCritical) => {
-      let isMax = ""
-      if (userCritical >= maxCritical) { isMax = "Max"; return isMax }
-      else { isMax = "No Max"; return isMax }
+      else { isMax = "Not Max"; return isMax }
    }
    const jobCheck = (foundObj, jobGrowName, spChars, userBuff) => {
       if (foundObj) {
@@ -64,61 +68,9 @@ function Main() {
          return chMax(userBuff, 20)
       }
    }
-   const criCheck = (not100CharFind, jobGrowName, not100Chars, userCritical) => {
-      if (not100CharFind) {
-         switch (jobGrowName) {
-            case not100Chars[0].직업:
-               return chMax2(userCritical, not100Chars[0].만크);
-            case not100Chars[1].직업:
-               return chMax2(userCritical, not100Chars[1].만크);
-            case not100Chars[2].직업:
-               return chMax2(userCritical, not100Chars[2].만크);
-            case not100Chars[3].직업:
-               return chMax2(userCritical, not100Chars[3].만크);
-            case not100Chars[4].직업:
-               return chMax2(userCritical, not100Chars[4].만크);
-            case not100Chars[5].직업:
-               return chMax2(userCritical, not100Chars[5].만크);
-            case not100Chars[6].직업:
-               return chMax2(userCritical, not100Chars[6].만크);
-            case not100Chars[7].직업:
-               return chMax2(userCritical, not100Chars[7].만크);
-            case not100Chars[8].직업:
-               return chMax2(userCritical, not100Chars[8].만크);
-            case not100Chars[9].직업:
-               return chMax2(userCritical, not100Chars[9].만크);
-            case not100Chars[10].직업:
-               return chMax2(userCritical, not100Chars[10].만크);
-            case not100Chars[11].직업:
-               return chMax2(userCritical, not100Chars[11].만크);
-            case not100Chars[12].직업:
-               return chMax2(userCritical, not100Chars[12].만크);
-            case not100Chars[13].직업:
-               return chMax2(userCritical, not100Chars[13].만크);
-            case not100Chars[14].직업:
-               return chMax2(userCritical, not100Chars[14].만크);
-            case not100Chars[15].직업:
-               return chMax2(userCritical, not100Chars[15].만크);
-            case not100Chars[16].직업:
-               return chMax2(userCritical, not100Chars[16].만크);
-            case not100Chars[17].직업:
-               return chMax2(userCritical, not100Chars[17].만크);
-            case not100Chars[18].직업:
-               return chMax2(userCritical, not100Chars[18].만크);
-            case not100Chars[19].직업:
-               return chMax2(userCritical, not100Chars[19].만크);
-            default:
-               break;
-         }
-      } else {
-         return chMax2(userCritical, 100)
-      }
-   }
    const fetchData = async (charUID, serverID) => {
       try {
-         await axios.get(`/api/chardata`, { params: { charUID: charUID, serverID: serverID } }).then(res => {
-            setUserDatas(res.data);
-         })
+         await axios.post(`/api/chardata`, { params: { "charUID": charUID, "serverID": serverID } }).then(res => { setUserDatas(res.data) })
       } catch (error) {
          console.error('데이터를 불러오는 데 실패했습니다.', error);
       }
@@ -128,50 +80,93 @@ function Main() {
       event.returnValue = ''; // Chrome에서 경고 메시지를 표시하기 위해 필요
    };
    useEffect(() => {
-      fetchData(charUID, serverID)
       window.addEventListener('beforeunload', handleBeforeUnload);
+      fetchData(charUID, serverID)
       return () => {
          window.removeEventListener('beforeunload', handleBeforeUnload);
       };
-   }, [searchParams])
+   }, [])
    return (
       <div className="MainContainer">
-         <div className='imageContainer'>
-            <img src={`https://img-api.neople.co.kr/df/servers/${serverID}/characters/${charUID}`} alt="char_img" />
+         <div className='jumpDUNDAM'>
+            <div className='imageContainer'>
+               <img src={`https://img-api.neople.co.kr/df/servers/${serverID}/characters/${charUID}`} alt="char_img" />
+            </div>
          </div>
-         <div className="table">
-            <table>
-               <tbody>
-                  <tr style={{ "textAlign": "center" }}>
-                     <th>크리쳐</th>
-                     <td>{navi_chaeck(userDatas.naOhChing["크리처"].value, 889, 810)}</td>
-                  </tr>
-                  <tr style={{ "textAlign": "center" }}>
-                     <th>오라</th>
-                     <td>{navi_chaeck(userDatas.naOhChing["오라"].value, 545, 463)}</td>
-                  </tr>
-                  <tr style={{ "textAlign": "center" }}>
-                     <th>칭호</th>
-                     <td>{navi_chaeck(userDatas.naOhChing["칭호"].value, 849, 790)}</td>
-                  </tr>
-                  <tr style={{ "textAlign": "center" }}>
-                     <th>어깨마부</th>
-                     <td>{userDatas.equips[0]}</td>
-                  </tr>
-                  <tr style={{ "textAlign": "center" }}>
-                     <th>허리마부</th>
-                     <td>{userDatas.equips[1]}</td>
-                  </tr>
-                  <tr style={{ "textAlign": "center" }}>
-                     <th>크리티컬</th>
-                     <td>{criCheck(not100CharFind,userDatas.jobGrowName,not100Chars,critical(userDatas.critical[0].value, userDatas.critical[1].value))}&nbsp;({critical(userDatas.critical[0].value, userDatas.critical[1].value)}%)</td>
-                  </tr>
-                  <tr style={{ "textAlign": "center" }}>
-                     <th>자버프</th>
-                     <td>{jobCheck(foundObj, userDatas.jobGrowName, spChars, userDatas.buffSkill)}&nbsp;({userDatas.buffSkill})</td>
-                  </tr>
-               </tbody>
-            </table>
+         <div className="tableLike">
+            <div className='table'>
+               {userDatas && userDatas.buffSkill ?
+                  <div className='tbody'>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>강화</div>
+                        <div>{userDatas.equips[2]["강화"]} 강</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>재련</div>
+                        <div>{userDatas.equips[3]["재련"]} 재련</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>크리쳐</div>
+                        <div style={
+                           navi_chaeck(userDatas.naOhChing["크리처"].value, 889, 810) === "종결" ? { color: "green" } :
+                              navi_chaeck(userDatas.naOhChing["크리처"].value, 889, 810) === "준종결" ? { color: "#ffb62e" } :
+                                 navi_chaeck(userDatas.naOhChing["크리처"].value, 889, 810) === "통수" ? { color: "red" } :
+                                    { color: "#000" }
+                        }
+                        >{navi_chaeck(userDatas.naOhChing["크리처"].value, 889, 810)}</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>오라</div>
+                        <div style={
+                           navi_chaeck(userDatas.naOhChing["오라"].value, 545, 463) === "종결" ? { color: "green" } :
+                              navi_chaeck(userDatas.naOhChing["오라"].value, 545, 463) === "준종결" ? { color: "#ffb62e" } :
+                                 navi_chaeck(userDatas.naOhChing["오라"].value, 545, 463) === "통수" ? { color: "red" } :
+                                    { color: "#000" }
+                        }
+                        >{navi_chaeck(userDatas.naOhChing["오라"].value, 545, 463)}</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>칭호</div>
+                        <div style={
+                           navi_chaeck(userDatas.naOhChing["칭호"].value, 849, 790) === "종결" ? { color: "green" } :
+                              navi_chaeck(userDatas.naOhChing["칭호"].value, 849, 790) === "준종결" ? { color: "#ffb62e" } :
+                                 navi_chaeck(userDatas.naOhChing["칭호"].value, 849, 790) === "통수" ? { color: "red" } :
+                                    { color: "#000" }
+                        }
+                        >{navi_chaeck(userDatas.naOhChing["칭호"].value, 849, 790)}</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>시브</div>
+                        <div>{userDatas.equips[4].status.length === 4 ?
+                           userDatas.equips[4].status[3]["value"] === 3 ? "시브 있음" : "시브 없음" : "시브 없음"}</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>어깨마부</div>
+                        <div>{userDatas.equips[0].explain ? userDatas.equips[0].explain : "-"}</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>허리마부</div>
+                        <div>{userDatas.equips[1].explain ? userDatas.equips[1].explain : "-"}</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div className='crittical'>
+                           <span>크리티컬</span>
+                           <span style={{cursor:"pointer"}} onClick={() => { openModal() }}><AiOutlineQuestionCircle /></span>
+                        </div>
+                        <div>{critical(userDatas.critical[0].value, userDatas.critical[1].value)}%</div>
+                     </div>
+                     <div style={{ "textAlign": "center" }} className='tr'>
+                        <div>자버프</div>
+                        <div>{jobCheck(foundObj, userDatas.jobGrowName, spChars, userDatas.buffSkill)}&nbsp;({userDatas.buffSkill})</div>
+                     </div>
+                  </div>
+                  : ""}
+            </div>
+            <Modals
+               modalIsOpen={modalIsOpen}
+               afterOpenModal={afterOpenModal}
+               closeModal={closeModal}
+            />
          </div>
       </div>
 
