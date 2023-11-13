@@ -26,24 +26,24 @@ function Modals(props) {
          contentLabel="Example Modal"
       >
          <div className='opppss'>
-            <div>
+            <div className='modalTheme'>
                <p>마을만크 100% 아닌 직업</p>
                <span className='closeBtn' onClick={props.closeModal}><RiCloseCircleLine /></span>
             </div>
             <div className='modal_item'>
                <div className='theadModal'>
-                  <span>직업</span>
-                  <span>만크 수치</span>
+                  <span style={{ "color": "#fff" }}>직업</span>
+                  <span style={{ "color": "#fff" }}>만크 수치</span>
                </div>
                <div className='tbodyModal'>
-                  {not100Chars.length > 0 ? 
-                  not100Chars.map((v,i)=>(
-                     <div className='trModal' key={i}>
-                        <span>{v.직업.substring(2)}</span>
-                        <span>{v.만크}</span>
-                     </div>
-                  ))
-                  :""}
+                  {not100Chars.length > 0 ?
+                     not100Chars.map((v, i) => (
+                        <div className='trModal' key={i}>
+                           <span>{v["직업"].substring(2)}</span>
+                           <span>{v["만크"]}</span>
+                        </div>
+                     ))
+                     : ""}
                </div>
             </div>
          </div>

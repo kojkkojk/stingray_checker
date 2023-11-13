@@ -38,6 +38,8 @@ function Home() {
                placeholder="닉네임 입력" />
             <button className="search-button" onClick={check}>검색</button>
          </div>
+         <div className='search-desc'>
+         </div>
       </div>
    )
 }

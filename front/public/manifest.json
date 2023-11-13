@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Stingray finder",
+  "name": "DNF Idiot Checker",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,7 +1,7 @@
 /* ▼ 검색 첫 화면 */
 .searchContainer {
   width: 100%;
-  height: 85%;
+  height: calc(100% - 110px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,14 +51,22 @@
   outline: none;
   border: 1px solid #3375cc;
 }
-
+.search-desc{
+  padding-top: 20px;
+}
 @media (min-width: 800px) {
-  .search-container {
-    width: 600px;
+  .searchContainer{
+    height: calc(100% - 75px);
+    margin-top: 0;
   }
-
+  .search-container {
+    width: 500px;
+  }
   .search-logo {
-    width: 600px;
+    width: 500px;
+  }
+  .isItHim {
+    padding: 25px 15% !important;
   }
 }
 
@@ -70,81 +78,165 @@
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 25px 20px 5px 20px;
   font-family: 'DNFForgedBlade';
 }
-.MainContainer .jumpDUNDAM{
+
+.MainContainer .jumpDUNDAM {
   width: 100%;
+  padding: 0 20px;
+}
+
+.jumpDUNDAM .basic_charinfo {
   display: flex;
-  padding: 0 50px;
+  width: 100%;
+}
+
+.MainContainer .basic_charinfo span {  
+  background-color:  rgba(167, 167, 167, 0.65);
+  color: #fff;
+  font-size: small;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+}
+.MainContainer .basic_charinfo span:nth-child(1){
+  width: 45%;
+  border-bottom-left-radius: 5px;
+}
+.MainContainer .basic_charinfo span:nth-child(2){
+  width: 55%;
+  border-bottom-right-radius: 5px;
 }
 .MainContainer .imageContainer {
-  width: 100%;
-  text-align: center;
+  width: 75%;
   background-image: url("https://static.dnf-universe.com/source/2022/12/2a3aae3f-83b8-40ff-b6a8-6445bd4e6fba.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.MainContainer .imageContainer .image {
-  width: 65%;
-  aspect-ratio: 13/15;
-  /* 가로:세로 비율 13:15 */
+  text-align: center;
+  margin: auto;
+  border: 3px solid #3375cc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
 }
 
 .MainContainer .tableLike {
   padding: 15px 20px;
   width: 100%;
+  min-height: 390px;
 }
 
 .MainContainer .tableLike .table {
   width: 100%;
 }
-.MainContainer .table .tr{
+
+.MainContainer .table .tr {
   display: flex;
-  gap: 4.5px;
   width: 100%;
-  margin-bottom: 4.5px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
+
 .MainContainer .table .tbody .tr div:nth-child(2) {
   width: 55%;
+  border-left: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
+
 .MainContainer .table .tbody .tr div:nth-child(1) {
   width: 45%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #3375cc;
+  color: #fff;
 }
+
 .MainContainer .table .tbody .tr div {
-  border: 1px solid rgba(167, 167, 167, 0.5);
+  border: 1px solid #3375cc;
   padding: 10px;
 }
 @media (min-width: 800px) {
   .MainContainer {
+    display: flex;
     flex-direction: row;
+    padding: 0px 20%;
+  }
+  .MainContainer .jumpDUNDAM {
+    width: 50%;
+    display: flex;
+    padding: 0 20px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 15%;
-    gap: 15px;
+    height: 240px;
+  }  
+
+  .MainContainer .basic_charinfo {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 3px;
   }
 
-  .imageContainer {
-    width: 300px;
-    border: 1px solid black;
+  .MainContainer .imageContainer {
+    width: 100%;
+    text-align: center;
   }
-
-  .MainContainer .imageContainer .image {
-    width: 200px;
-    aspect-ratio: 3/4;
+  .MainContainer .imageContainer img {
+    top: 10px;
   }
-
-  .MainContainer .imageContainer .table {
-    margin-top: 20px;
+  .MainContainer .basic_charinfo span {  
+    background-color:  rgba(167, 167, 167, 0.6);
+    width: 100% !important;
+    height: 30px !important;
+  }
+  .MainContainer .basic_charinfo span:nth-child(1){
+    border-radius: 0;
+  }
+  .MainContainer .basic_charinfo span:nth-child(2){
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 }
 
+@media (min-width: 1200px) {
+  .MainContainer {
+    padding: 0 30%;
+  }
+}
+.toggle{
+  margin-top: 15px;
+  padding: 0 20px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  gap: 7px;
+}
+.toggle>span{
+  border: 1px solid #3375cc;
+  background-color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  width: 50%;
+  line-height: 40px;
+  text-align: center;
+  height: 100%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  transition: 0.2s;
+}
+.toggle>.active{
+  background-color: #3375cc;
+  color: #fff;
+}
 /* ▲ 검색 결과 화면 */
 /* ▼ 검색 목록 화면 */
 .isItHim {
-  height: 100%;
-  padding: 15px;
+  min-height: 85%;
+  padding: 18px;
   font-family: 'DNFForgedBlade';
 }
 
@@ -157,10 +249,11 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   font-size: 11pt;
   line-height: 32px;
+  border-radius: 5px;
 }
 
 .isItHim .thead {
-  border: 1px solid rgba(209, 209, 209, 0.5);
+  border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   height: 40px;
   margin-bottom: 15px;
