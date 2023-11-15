@@ -1,7 +1,7 @@
 import React from 'react';
-import { useRecoilValue} from 'recoil';
-import { userDataState, naOhChing ,equipsSelector} from '../../recoil/atom'
-import { navi_chaeck, spChars, acccMabu,isMax,not100Chars,itemList } from '../../configs/etc';
+import { useRecoilValue } from 'recoil';
+import { userDataState, naOhChing, equipsSelector } from '../../recoil/atom'
+import { navi_chaeck, spChars, acccMabu, isMax, not100Chars, itemList } from '../../configs/etc';
 
 function Table() {
    const userDatas = useRecoilValue(userDataState);
@@ -87,7 +87,7 @@ function Table() {
                   </div>
                   <div style={{ "textAlign": "center" }} className='tr'>
                      <div>크리티컬</div>
-                     <div>{isMax(userDatas,not100Chars,itemList,equipss)} ({criticalValue(userDatas.critical[0]["value"],userDatas.critical[1]["value"])} %)</div>
+                     <div>{isMax(userDatas, not100Chars, itemList, equipss)} ({criticalValue(userDatas.critical[0]["value"], userDatas.critical[1]["value"])} %)</div>
                   </div>
                </div>
                : ""}

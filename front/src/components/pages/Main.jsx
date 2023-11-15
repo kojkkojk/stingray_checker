@@ -37,7 +37,7 @@ function Main() {
          window.removeEventListener('beforeunload', handleBeforeUnload);
       };
    }, [])
-   
+
    return (
       <div className="MainContainer">
          <div className='jumpDUNDAM'>
@@ -48,30 +48,23 @@ function Main() {
                   <span>{userData.jobGrowName}</span>
                </div>
             </div>
+            <div className="toggle">
+               <span className={viewChange ? "active" : ""} onClick={() => { setViewChange(true) }}>오칭크</span>
+               <span className={viewChange ? "" : "active"} onClick={() => { setViewChange(false) }}>마법 부여</span>
+            </div>
          </div>
          {bufferId.includes(userData.jobIdNjobGrowId.jobId) && bufferId2.includes(userData.jobIdNjobGrowId.jobGrowId) ?
             userData.jobIdNjobGrowId.jobId === bufferId[1] && userData.buffCru[0].value !== userData.buffCru[1].value ?
-               <>
-               <div className="toggle">
-                  <span className={viewChange ? "active" : ""} onClick={() => { setViewChange(true) }}>오칭크</span>
-                  <span className={viewChange ? "" : "active"} onClick={() => { setViewChange(false) }}>마법 부여</span>
-               </div>
-               <div className="tableLike">
-                  <Table />
-               </div>
-               </> :
-               <div className="tableLike">
-                  <BuffTable />
-               </div> :
-               <>
-               <div className="toggle">
-                  <span className={viewChange ? "active" : ""} onClick={() => { setViewChange(true) }}>오칭크</span>
-                  <span className={viewChange ? "" : "active"} onClick={() => { setViewChange(false) }}>마법 부여</span>
-               </div>
-               <div className="tableLike">
-                  <Table />
-               </div>
-               </>}
+            <div className="tableLike">
+               <Table />
+            </div> :
+            <div className="tableLike">
+               <BuffTable />
+            </div> :
+            <div className="tableLike">
+               <Table />
+            </div>
+         }
       </div>
    )
 }

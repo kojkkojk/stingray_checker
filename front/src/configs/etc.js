@@ -179,7 +179,15 @@ export function isMax(charInfo, not100Chars, itemList, userItemList) {
             // 1 - 2 - 2. 아이템을 가지고 있음 => 기본 수치와 아이템 수치 합이 100 넘는지 확인
 
             // 1 - 2 - 2  -1. 100 넘음 => Max
-            if (tyohyio(itemList, userItemList)[0]["value"] + isCritical >= 100) { return "Max" }
+            if (tyohyio(itemList, userItemList)[0]["value"] + isCritical >= 100) {
+               return "Max"
+            } else if (charInfo.jobGrowName === "眞 소울브링어" && hasCommonElement(itemList, userItemList)) {
+               if (tyohyio(itemList, userItemList)[0]["value"] + isCritical >= 95) {
+                  return "Max"
+               } else {
+                  return "Not Max"
+               }
+            }
             // 1 - 2 - 2 - 2. 100 안넘음 => Not Max
             return "Not Max"
          } else {

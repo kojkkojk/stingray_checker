@@ -28,7 +28,6 @@ export const userDataState = atom({
       equipmentTrait:{}
    }
 })
-
 // 특정 key의 value만을 추출하는 함수
 function extractValuesByKey(arr, key) {
    let arrs = arr["equips"]
