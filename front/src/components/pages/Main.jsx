@@ -42,7 +42,7 @@ function Main() {
       <div className="MainContainer">
          <div className='jumpDUNDAM'>
             <div className='imageContainer'>
-               <img src={`https://img-api.neople.co.kr/df/servers/${serverID}/characters/${charUID}`} alt="char_img" />
+               <img src={`https://img-api.neople.co.kr/df/servers/${serverID}/characters/${charUID}`} alt="char_img" width={"100%"}/>
                <div className='basic_charinfo'>
                   <span>{userData.charName["name"]}</span>
                   <span>{userData.jobGrowName}</span>
@@ -50,7 +50,7 @@ function Main() {
             </div>
             <div className="toggle">
                <span className={viewChange ? "active" : ""} onClick={() => { setViewChange(true) }}>오칭크</span>
-               <span className={viewChange ? "" : "active"} onClick={() => { setViewChange(false) }}>마법 부여</span>
+               <span className={viewChange ? "" : "active"} onClick={() => { setViewChange(false) }}>장비</span>
             </div>
          </div>
          {bufferId.includes(userData.jobIdNjobGrowId.jobId) && bufferId2.includes(userData.jobIdNjobGrowId.jobGrowId) ?

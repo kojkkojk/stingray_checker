@@ -41,9 +41,8 @@ function Table() {
                   <div style={{ "textAlign": "center" }} className='tr'>
                      <div>강화</div>
                      <div style={userDatas.equips[0]["amplificationName"] !== null ?
-                        { "color": "#c024f0" } :
-                        { "color": "#000" }
-                     }>{userDatas.equips[0]["reinforce"]} {userDatas.equips[0]["amplificationName"] !== null ? "증폭" : "강화"}</div>
+                        { "color": "#c024f0" } : { "color": "#000" }}>
+                        {userDatas.equips[0]["reinforce"]} {userDatas.equips[0]["amplificationName"] !== null ? "증폭" : "강화"}</div>
                   </div>
                   <div style={{ "textAlign": "center" }} className='tr'>
                      <div>재련</div>
@@ -87,7 +86,9 @@ function Table() {
                   </div>
                   <div style={{ "textAlign": "center" }} className='tr'>
                      <div>크리티컬</div>
-                     <div>{isMax(userDatas, not100Chars, itemList, equipss)} ({criticalValue(userDatas.critical[0]["value"], userDatas.critical[1]["value"])} %)</div>
+                     <div style={
+                        isMax(userDatas, not100Chars, itemList, equipss) === "Max" ? {color : "#0c7308"} : {color:"red"}
+                     }>{isMax(userDatas, not100Chars, itemList, equipss)} ({criticalValue(userDatas.critical[0]["value"], userDatas.critical[1]["value"])} %)</div>
                   </div>
                </div>
                : ""}
@@ -99,7 +100,7 @@ function Table() {
             {userDatas && userDatas.buffSkill ?
                <div className='tbody'>
                   <div style={{ "textAlign": "center" }} className='tr'>
-                     <div>악세마부</div>
+                     <div>악세서리</div>
                      <div style={
                         acccMabu(userDatas.equips[7].enchant.status, userDatas.equips[8].enchant.status, userDatas.equips[9].enchant.status) === "종결"
                            ? { color: "#0c7308" } :
@@ -115,15 +116,15 @@ function Table() {
                         : ""}</div>
                   </div>
                   <div style={{ "textAlign": "center" }} className='tr'>
-                     <div>어깨마부</div>
+                     <div>어깨</div>
                      <div>{userDatas.equips[3].enchant.explain ? userDatas.equips[3].enchant.explain : "-"}</div>
                   </div>
                   <div style={{ "textAlign": "center" }} className='tr'>
-                     <div>허리마부</div>
+                     <div>허리</div>
                      <div>{userDatas.equips[6].enchant.explain ? userDatas.equips[6].enchant.explain : "-"}</div>
                   </div>
                   <div style={{ "textAlign": "center" }} className='tr'>
-                     <div>신발마부</div>
+                     <div>신발</div>
                      <div>{userDatas.equips[5].enchant.explain ?
                         userDatas.equips[5].enchant.explain :
                         userDatas.equips[5].enchant.status.length >= 2 && userDatas.equips[5].enchant.status.length < 4 ?
@@ -131,9 +132,13 @@ function Table() {
                      }</div>
                   </div>
                   <div style={{ "textAlign": "center" }} className='tr'>
-                     <div>시브</div>
+                     <div>보조장비</div>
                      <div>{userDatas.equips[10].enchant.status.length === 4 ?
-                        userDatas.equips[10].enchant.status[3]["value"] === 3 ? "O" : "X" : "X"}</div>
+                        userDatas.equips[10].enchant.status[3]["value"] === 3 ? "시브" : "공격력 증가" : "공격력 증가"}</div>
+                  </div>
+                  <div style={{ "textAlign": "center" }} className='tr'>
+                     <div>장비 총 레벨</div>
+                     <div>{userDatas.equipmentTrait ? userDatas.equipmentTrait.totalLevel : "仙 업글 X"}</div>
                   </div>
                </div>
                : ""}

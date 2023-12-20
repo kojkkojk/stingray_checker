@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.bgColor};
     transition: 0.35s;
   }
+  .toggle span,
   .MainContainer .table .tbody .tr div:nth-child(2) {
    background: ${({ theme }) => theme.bgColor2};
    transition: 0.35s;

@@ -1,0 +1,671 @@
+{
+  "name" : "용맹의 축복",
+  "type" : "active",
+  "costType" : "SP",
+  "desc" : "일정 범위 내의 파티원들을 축복하여 물리, 마법, 독립 공격력과 힘, 지능, 적중률을 올려주며, 자신의 기본 공격력과 스킬 공격력을 증가시킨다.",
+  "descDetail" : "일정 범위 내의 파티원들을 축복하여 물리, 마법, 독립 공격력과 힘, 지능, 적중률을 올려주며, 자신의 기본 공격력과 스킬 공격력을 증가시킨다.\n\n기본 공격 및 스킬 공격력 증가 효과는 20레벨 이후부터는 상승하지 않으며 자신에게는 물리, 마법, 독립 공격력, 힘, 지능 증가 효과가 적용되지 않는다.\n\n시전자의 지능이 높을수록 물리,마법/독립 공격력, 힘, 지능 상승량이 증가한다.\n\n크루세이더(남)의 영광의 축복, 인챈트리스의 금단의 저주, 뮤즈의 러블리 템포와 중복 적용되지 않는다.",
+  "consumeItem" : null,
+  "maxLevel" : 40,
+  "requiredLevel" : 30,
+  "requiredLevelRange" : 3,
+  "preRequiredSkill" : [ {
+    "skillId" : "ade01c1d6afc8a05055225045e89fe49",
+    "name" : "수호의 축복",
+    "level" : "1"
+  } ],
+  "jobId" : "0c1b401bb09241570d364420b3ba3fd7",
+  "jobName" : "프리스트(여)",
+  "jobGrowLevel" : [ {
+    "jobGrowId" : "1ea40db11ff66e70bcb0add7fae44cdb",
+    "jobGrowName" : "프리스트(여)",
+    "masterLevel" : 1
+  }, {
+    "jobGrowId" : "df3870efe8e8754011cd12fa03cd275f",
+    "jobGrowName" : "크루세이더",
+    "masterLevel" : 10
+  } ],
+  "levelInfo" : {
+    "optionDesc" : "지속시간 : {value1}초\n물리 공격력 증가량 : {value2}\n마법 공격력 증가량 : {value3}\n독립 공격력 증가량 : {value4}\n힘 증가량 : {value5}\n지능 증가량 : {value6}\n적중률 증가량 : {value7}%\n\n기본 공격 및 스킬 공격력 증가량 : {value8}%\n\n[범위 정보]\n버프 적용 범위 : {value9}px",
+    "rows" : [ {
+      "level" : 1,
+      "consumeMp" : 35,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 39,
+        "value3" : 39,
+        "value4" : 39,
+        "value5" : 154,
+        "value6" : 154,
+        "value7" : 15.4,
+        "value8" : 13,
+        "value9" : 900
+      }
+    }, {
+      "level" : 2,
+      "consumeMp" : 44,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 41,
+        "value3" : 41,
+        "value4" : 41,
+        "value5" : 164,
+        "value6" : 164,
+        "value7" : 16.3,
+        "value8" : 16,
+        "value9" : 900
+      }
+    }, {
+      "level" : 3,
+      "consumeMp" : 53,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 43,
+        "value3" : 43,
+        "value4" : 43,
+        "value5" : 176,
+        "value6" : 176,
+        "value7" : 17.2,
+        "value8" : 19,
+        "value9" : 900
+      }
+    }, {
+      "level" : 4,
+      "consumeMp" : 63,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 44,
+        "value3" : 44,
+        "value4" : 44,
+        "value5" : 186,
+        "value6" : 186,
+        "value7" : 18,
+        "value8" : 22,
+        "value9" : 900
+      }
+    }, {
+      "level" : 5,
+      "consumeMp" : 72,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 45,
+        "value3" : 45,
+        "value4" : 45,
+        "value5" : 197,
+        "value6" : 197,
+        "value7" : 18.9,
+        "value8" : 25,
+        "value9" : 900
+      }
+    }, {
+      "level" : 6,
+      "consumeMp" : 81,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 47,
+        "value3" : 47,
+        "value4" : 47,
+        "value5" : 206,
+        "value6" : 206,
+        "value7" : 19.8,
+        "value8" : 28,
+        "value9" : 900
+      }
+    }, {
+      "level" : 7,
+      "consumeMp" : 91,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 49,
+        "value3" : 49,
+        "value4" : 49,
+        "value5" : 216,
+        "value6" : 216,
+        "value7" : 20.6,
+        "value8" : 31,
+        "value9" : 900
+      }
+    }, {
+      "level" : 8,
+      "consumeMp" : 100,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 50,
+        "value3" : 50,
+        "value4" : 50,
+        "value5" : 227,
+        "value6" : 227,
+        "value7" : 21.5,
+        "value8" : 34,
+        "value9" : 900
+      }
+    }, {
+      "level" : 9,
+      "consumeMp" : 109,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 52,
+        "value3" : 52,
+        "value4" : 52,
+        "value5" : 237,
+        "value6" : 237,
+        "value7" : 22.4,
+        "value8" : 37,
+        "value9" : 900
+      }
+    }, {
+      "level" : 10,
+      "consumeMp" : 119,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 53,
+        "value3" : 53,
+        "value4" : 53,
+        "value5" : 249,
+        "value6" : 249,
+        "value7" : 23.2,
+        "value8" : 40,
+        "value9" : 900
+      }
+    }, {
+      "level" : 11,
+      "consumeMp" : 128,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 54,
+        "value3" : 54,
+        "value4" : 54,
+        "value5" : 259,
+        "value6" : 259,
+        "value7" : 24.1,
+        "value8" : 43,
+        "value9" : 900
+      }
+    }, {
+      "level" : 12,
+      "consumeMp" : 137,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 56,
+        "value3" : 56,
+        "value4" : 56,
+        "value5" : 269,
+        "value6" : 269,
+        "value7" : 25,
+        "value8" : 46,
+        "value9" : 900
+      }
+    }, {
+      "level" : 13,
+      "consumeMp" : 147,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 58,
+        "value3" : 58,
+        "value4" : 58,
+        "value5" : 280,
+        "value6" : 280,
+        "value7" : 25.8,
+        "value8" : 49,
+        "value9" : 900
+      }
+    }, {
+      "level" : 14,
+      "consumeMp" : 156,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 59,
+        "value3" : 59,
+        "value4" : 59,
+        "value5" : 290,
+        "value6" : 290,
+        "value7" : 26.7,
+        "value8" : 52,
+        "value9" : 900
+      }
+    }, {
+      "level" : 15,
+      "consumeMp" : 165,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 61,
+        "value3" : 61,
+        "value4" : 61,
+        "value5" : 302,
+        "value6" : 302,
+        "value7" : 27.6,
+        "value8" : 55,
+        "value9" : 900
+      }
+    }, {
+      "level" : 16,
+      "consumeMp" : 175,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 62,
+        "value3" : 62,
+        "value4" : 62,
+        "value5" : 311,
+        "value6" : 311,
+        "value7" : 28.4,
+        "value8" : 58,
+        "value9" : 900
+      }
+    }, {
+      "level" : 17,
+      "consumeMp" : 184,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 63,
+        "value3" : 63,
+        "value4" : 63,
+        "value5" : 321,
+        "value6" : 321,
+        "value7" : 29.3,
+        "value8" : 61,
+        "value9" : 900
+      }
+    }, {
+      "level" : 18,
+      "consumeMp" : 193,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 65,
+        "value3" : 65,
+        "value4" : 65,
+        "value5" : 332,
+        "value6" : 332,
+        "value7" : 30.2,
+        "value8" : 64,
+        "value9" : 900
+      }
+    }, {
+      "level" : 19,
+      "consumeMp" : 203,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 67,
+        "value3" : 67,
+        "value4" : 67,
+        "value5" : 342,
+        "value6" : 342,
+        "value7" : 31.1,
+        "value8" : 67,
+        "value9" : 900
+      }
+    }, {
+      "level" : 20,
+      "consumeMp" : 212,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 69,
+        "value3" : 69,
+        "value4" : 69,
+        "value5" : 353,
+        "value6" : 353,
+        "value7" : 31.9,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 21,
+      "consumeMp" : 221,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 70,
+        "value3" : 70,
+        "value4" : 70,
+        "value5" : 363,
+        "value6" : 363,
+        "value7" : 32.8,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 22,
+      "consumeMp" : 231,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 71,
+        "value3" : 71,
+        "value4" : 71,
+        "value5" : 374,
+        "value6" : 374,
+        "value7" : 33.7,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 23,
+      "consumeMp" : 240,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 73,
+        "value3" : 73,
+        "value4" : 73,
+        "value5" : 385,
+        "value6" : 385,
+        "value7" : 34.5,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 24,
+      "consumeMp" : 249,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 75,
+        "value3" : 75,
+        "value4" : 75,
+        "value5" : 395,
+        "value6" : 395,
+        "value7" : 35.4,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 25,
+      "consumeMp" : 259,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 77,
+        "value3" : 77,
+        "value4" : 77,
+        "value5" : 406,
+        "value6" : 406,
+        "value7" : 36.3,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 26,
+      "consumeMp" : 268,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 79,
+        "value3" : 79,
+        "value4" : 79,
+        "value5" : 415,
+        "value6" : 415,
+        "value7" : 37.1,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 27,
+      "consumeMp" : 277,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 80,
+        "value3" : 80,
+        "value4" : 80,
+        "value5" : 425,
+        "value6" : 425,
+        "value7" : 38,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 28,
+      "consumeMp" : 287,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 81,
+        "value3" : 81,
+        "value4" : 81,
+        "value5" : 437,
+        "value6" : 437,
+        "value7" : 38.9,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 29,
+      "consumeMp" : 296,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 83,
+        "value3" : 83,
+        "value4" : 83,
+        "value5" : 447,
+        "value6" : 447,
+        "value7" : 39.7,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 30,
+      "consumeMp" : 305,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 85,
+        "value3" : 85,
+        "value4" : 85,
+        "value5" : 458,
+        "value6" : 458,
+        "value7" : 40.6,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 31,
+      "consumeMp" : 315,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 86,
+        "value3" : 86,
+        "value4" : 86,
+        "value5" : 468,
+        "value6" : 468,
+        "value7" : 41.5,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 32,
+      "consumeMp" : 324,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 88,
+        "value3" : 88,
+        "value4" : 88,
+        "value5" : 478,
+        "value6" : 478,
+        "value7" : 42.3,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 33,
+      "consumeMp" : 333,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 89,
+        "value3" : 89,
+        "value4" : 89,
+        "value5" : 489,
+        "value6" : 489,
+        "value7" : 43.2,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 34,
+      "consumeMp" : 343,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 90,
+        "value3" : 90,
+        "value4" : 90,
+        "value5" : 500,
+        "value6" : 500,
+        "value7" : 44.1,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 35,
+      "consumeMp" : 352,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 92,
+        "value3" : 92,
+        "value4" : 92,
+        "value5" : 511,
+        "value6" : 511,
+        "value7" : 44.9,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 36,
+      "consumeMp" : 361,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 94,
+        "value3" : 94,
+        "value4" : 94,
+        "value5" : 520,
+        "value6" : 520,
+        "value7" : 45.8,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 37,
+      "consumeMp" : 371,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 95,
+        "value3" : 95,
+        "value4" : 95,
+        "value5" : 530,
+        "value6" : 530,
+        "value7" : 46.7,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 38,
+      "consumeMp" : 380,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 97,
+        "value3" : 97,
+        "value4" : 97,
+        "value5" : 541,
+        "value6" : 541,
+        "value7" : 47.6,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 39,
+      "consumeMp" : 389,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 98,
+        "value3" : 98,
+        "value4" : 98,
+        "value5" : 551,
+        "value6" : 551,
+        "value7" : 48.4,
+        "value8" : 70,
+        "value9" : 900
+      }
+    }, {
+      "level" : 40,
+      "consumeMp" : 399,
+      "coolTime" : 10,
+      "castingTime" : 0.5,
+      "optionValue" : {
+        "value1" : 120,
+        "value2" : 100,
+        "value3" : 100,
+        "value4" : 100,
+        "value5" : 563,
+        "value6" : 563,
+        "value7" : 49.3,
+        "value8" : 70,
+        "value9" : 900
+      }
+    } ]
+  }
+}

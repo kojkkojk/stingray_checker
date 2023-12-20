@@ -1,3 +1,4 @@
+import { buffLvOpt } from './buffer'
 export const serverList = {
    anton: "안톤", bakal: "바칼", cain: "카인", casillas: "카시야스", diregie: "디레지에", hilder: "힐더", prey: "프레이", siroco: "시로코"
 }
@@ -197,3 +198,29 @@ export function isMax(charInfo, not100Chars, itemList, userItemList) {
       }
    }
 }
+
+export const buffPower = (whatBuffer, buffStat, buffPower, buffLv) => {
+   let buffFullpower = 0;
+   let bfLv = buffLv + 14;
+   let sang = 0
+   switch (whatBuffer) {
+      case 0:
+         sang = buffLvOpt.muse[bfLv - 1].optionValue["value4"]
+         return sang * [((buffStat + 4350) / 660 + 1) * (buffPower + 3500) * 0.0000379]
+      case 0.5:
+         sang = buffLvOpt.ggoholy[bfLv - 1].optionValue["value5"]
+         return sang * [((buffStat + 4348) / 620 + 1) * (buffPower + 3488) * 0.0000357]
+      case 1:
+         sang = buffLvOpt.seraphim[bfLv - 1].optionValue["value5"]
+         return (sang + 229) * [((buffStat + 4350) / 660 + 1) * (buffPower + 3500) * 0.0000379]
+      case 1.5:
+         sang = buffLvOpt.inchant[bfLv - 1].optionValue["value7"]
+         return (sang + 300) * [((buffStat + 4350) / 660 + 1) * (buffPower + 3500) * 0.0000379]
+      default:
+         return buffFullpower;
+   }
+}
+
+// {(스텟+15700)÷15700} × {(앞뎀+2500)÷2500} × 1.6
+// {(스텟+15000)÷250}+1 × (앞뎀+2650) ÷ 10
+

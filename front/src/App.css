@@ -16,7 +16,7 @@
 }
 
 .search-logo {
-  width: 80%;
+  width: 100%;
   padding: 8px;
   height: 80px;
   text-align: center;
@@ -215,7 +215,6 @@
 }
 .toggle>span{
   border: 1px solid #3375cc;
-  background-color: #fff;
   cursor: pointer;
   display: inline-block;
   width: 50%;

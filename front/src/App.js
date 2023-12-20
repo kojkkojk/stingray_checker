@@ -14,7 +14,6 @@ import { useEffect } from 'react';
 
 const NotFound = () => <div>404 Not Found</div>;
 
-
 function App() {
   const [currentTheme, setCurrentTheme] = useRecoilState(themeState)
   const theme = currentTheme === "LIGHT" ? darkTheme : lightTheme;
